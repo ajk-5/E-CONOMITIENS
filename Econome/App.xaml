@@ -1,0 +1,91 @@
+﻿<Application x:Class="Econome.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Econome"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style x:Key="NavButtons" TargetType="Button">
+            <Setter Property="Background" Value="#1C1224"/>
+            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                CornerRadius="15"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#352541"/>
+                                <Setter Property="Foreground" Value="MediumPurple"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="EconomeButton" TargetType="Button">
+            <Setter Property="Background" Value="#1C1224"/>
+            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="BorderThickness" Value="0,1,0,1"/>
+            <Setter Property="BorderBrush" Value="MediumPurple"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+        CornerRadius="15"
+        BorderBrush="{TemplateBinding BorderBrush}"
+        BorderThickness="{TemplateBinding BorderThickness}"
+        Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ClickedButtonStyle" TargetType="Button" BasedOn="{StaticResource NavButtons}">
+            <Setter Property="Background" Value="#1C1224"/>
+            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="MediumPurple"/>
+        </Style>
+
+        <Style x:Key="RoomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#09FF0000"/>
+            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="BorderBrush" Value="MediumPurple"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4D800080"/>
+                                <Setter Property="Foreground" Value="MediumPurple"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PurpleLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="MediumPurple"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

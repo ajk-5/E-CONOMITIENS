@@ -1,0 +1,90 @@
+﻿<UserControl
+    x:Class="Econome.Pages.Setting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="#040A20"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#D7D1F8" />
+        </Style>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Template">  
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#040A20" />
+                    <Setter Property="Foreground" Value="#D7D1F8" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Viewbox
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Stretch="Uniform">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBlock
+                        Width="230"
+                        Height="23"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontSize="10"
+                        Text="Paramètres"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+        <Viewbox
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Stretch="Uniform">
+            <Grid>
+                <TextBlock
+                    Margin="193,107,208,310"
+                    FontSize="30"
+                    Text="Seuil d'alertes de température" />
+                <Slider
+                    x:Name="TemperatureSlider"
+                    Margin="222,166,238,266"
+                    IsSnapToTickEnabled="True"
+                    Maximum="40"
+                    Minimum="10"
+                    TickFrequency="1"
+                    Value="20" />
+                <TextBlock
+                    Margin="193,196,327,212"
+                    FontSize="30"
+                    Text="{Binding Value, ElementName=TemperatureSlider, StringFormat=Température: \{0\} °C}" />
+                <Button
+                    Margin="333,257,333,141"
+                    Background="#040A20"
+                    BorderThickness="1"
+                    Click="ConfirmButton_Click"
+                    Content="Confirmer"
+                    FontSize="25"
+                    Foreground="#D7D1F8"
+                    Style="{StaticResource CustomButtonStyle}" />
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

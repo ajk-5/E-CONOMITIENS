@@ -1,0 +1,22 @@
+# Ignorer les fichiers binaires et de construction
+Econome/.vs/
+E-conomitiens/.vs/
+.vs/
+
+# Ignorer les fichiers binaires et de construction
+Econome/bin/
+Econome/obj/
+E-conomitiens/obj/
+E-conomitiens/bin/
+bin/
+obj/
+
+# Ignorer les fichiers temporaires et de sauvegarde
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorer les fichiers spécifiques aux systèmes d'exploitation
+.DS_Store
+Thumbs.db
